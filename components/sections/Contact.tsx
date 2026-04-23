@@ -13,6 +13,7 @@ export const Contact: React.FC = () => {
     service: '',
     message: '',
   })
+
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (
@@ -26,95 +27,107 @@ export const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulate form submission
+
     setSubmitted(true)
+
     setTimeout(() => {
       setFormData({ name: '', email: '', service: '', message: '' })
       setSubmitted(false)
-    }, 3000)
+    }, 2500)
   }
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-4 md:px-8">
-      <div className="max-w-5xl mx-auto">
-        <ScrollReveal direction="up" className="mb-16">
+    <section
+      id="contact"
+      className="py-10 sm:py-14 md:py-16 px-4 sm:px-6 md:px-8"
+    >
+      <div className="max-w-6xl mx-auto">
+
+        {/* Heading */}
+        <ScrollReveal direction="up" className="mb-8 sm:mb-10">
           <div className="text-center">
             <AnimatedHeading
-              className="text-4xl md:text-5xl font-bold mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3"
               gradient
             >
               Let&apos;s Work Together
             </AnimatedHeading>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Have a project in mind? Get in touch and let&apos;s create
-              something amazing together.
+
+            <p className="text-base sm:text-lg text-slate-400 max-w-xl sm:max-w-2xl mx-auto">
+              Have a project in mind? Let’s build something impactful together.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Information */}
+        {/* Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+
+          {/* Left - Contact Info */}
           <ScrollReveal direction="left">
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold text-slate-100 mb-8">
+            <div className="space-y-6">
+
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-100">
                 Contact Information
               </h3>
 
-              <div className="flex gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                  <Mail className="text-cyan-400" size={24} />
+              {/* Email */}
+              <div className="flex gap-4 group">
+                <div className="w-11 h-11 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-500/20 transition">
+                  <Mail className="text-cyan-400" size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-300 group-hover:text-cyan-400 transition-colors">
-                    Email
-                  </h4>
+                  <p className="text-sm text-slate-400">Email</p>
                   <a
-                    href="mailto:Georgy@gmail.com"
-                    className="text-slate-400 hover:text-cyan-400 transition-colors"
+                    href="mailto:chaitanya@example.com"
+                    className="text-slate-200 hover:text-cyan-400 transition"
                   >
-                    Georgy@gmail.com
+                    chaitanya@example.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                  <Phone className="text-cyan-400" size={24} />
+              {/* Phone */}
+              <div className="flex gap-4 group">
+                <div className="w-11 h-11 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-500/20 transition">
+                  <Phone className="text-cyan-400" size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-300 group-hover:text-cyan-400 transition-colors">
-                    Phone
-                  </h4>
-                  <p className="text-slate-400">+91 XXXXXXXXXX</p>
+                  <p className="text-sm text-slate-400">Phone</p>
+                  <p className="text-slate-200">+91 9000000000</p>
                 </div>
               </div>
 
-              <div className="flex gap-4 group cursor-pointer">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                  <MapPin className="text-cyan-400" size={24} />
+              {/* Location */}
+              <div className="flex gap-4 group">
+                <div className="w-11 h-11 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-cyan-500/20 transition">
+                  <MapPin className="text-cyan-400" size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-300 group-hover:text-cyan-400 transition-colors">
-                    Location
-                  </h4>
-                  <p className="text-slate-400">India</p>
+                  <p className="text-sm text-slate-400">Location</p>
+                  <p className="text-slate-200">Mumbai, India</p>
                 </div>
               </div>
 
-              <div className="pt-8">
-                <p className="text-sm text-slate-400 mb-4">
-                  Follow my work and stay updated:
+              {/* Socials */}
+              <div className="pt-4">
+                <p className="text-sm text-slate-400 mb-3">
+                  Connect with me:
                 </p>
-                <div className="flex gap-4">
-                  {['GitHub', 'LinkedIn', 'Instagram'].map((social) => (
+
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { name: 'GitHub', link: '#' },
+                    { name: 'LinkedIn', link: '#' },
+                    { name: 'Instagram', link: '#' },
+                  ].map((social) => (
                     <motion.a
-                      key={social}
-                      href="#"
-                      whileHover={{ scale: 1.1, y: -2 }}
+                      key={social.name}
+                      href={social.link}
+                      whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 rounded-lg bg-slate-800 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 transition-colors border border-slate-700 hover:border-cyan-500/50"
+                      className="px-4 py-2 rounded-lg bg-slate-800 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 border border-slate-700 hover:border-cyan-500/50 transition"
                     >
-                      {social}
+                      {social.name}
                     </motion.a>
                   ))}
                 </div>
@@ -122,11 +135,13 @@ export const Contact: React.FC = () => {
             </div>
           </ScrollReveal>
 
-          {/* Contact Form */}
+          {/* Right - Form */}
           <ScrollReveal direction="right">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label className="block text-sm font-medium text-slate-300">
+            <form onSubmit={handleSubmit} className="space-y-5">
+
+              {/* Name */}
+              <div>
+                <label className="text-sm text-slate-300">
                   Your Name
                 </label>
                 <motion.input
@@ -136,13 +151,14 @@ export const Contact: React.FC = () => {
                   onChange={handleChange}
                   placeholder="Chaitanya Kamble"
                   required
-                  whileFocus={{ scale: 1.02 }}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-500 focus:outline-none transition-colors"
+                  whileFocus={{ scale: 1.01 }}
+                  className="w-full mt-1 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 focus:border-cyan-500 focus:outline-none"
                 />
               </div>
 
-              <div className="space-y-2">
-                <label className="block text-sm font-medium text-slate-300">
+              {/* Email */}
+              <div>
+                <label className="text-sm text-slate-300">
                   Your Email
                 </label>
                 <motion.input
@@ -152,13 +168,14 @@ export const Contact: React.FC = () => {
                   onChange={handleChange}
                   placeholder="you@example.com"
                   required
-                  whileFocus={{ scale: 1.02 }}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-500 focus:outline-none transition-colors"
+                  whileFocus={{ scale: 1.01 }}
+                  className="w-full mt-1 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 focus:border-cyan-500 focus:outline-none"
                 />
               </div>
 
-              <div className="space-y-2">
-                <label className="block text-sm font-medium text-slate-300">
+              {/* Service */}
+              <div>
+                <label className="text-sm text-slate-300">
                   Service Needed
                 </label>
                 <motion.select
@@ -166,20 +183,21 @@ export const Contact: React.FC = () => {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  whileFocus={{ scale: 1.02 }}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 focus:border-cyan-500 focus:outline-none transition-colors"
+                  whileFocus={{ scale: 1.01 }}
+                  className="w-full mt-1 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 focus:border-cyan-500 focus:outline-none"
                 >
                   <option value="">Select a service</option>
-                  <option value="erp">ERP & CRM Solutions</option>
+                  <option value="erp">ERP & CRM</option>
                   <option value="api">API Integration</option>
-                  <option value="fintech">Fintech Development</option>
-                  <option value="custom">Custom App Development</option>
-                  <option value="optimization">UI/UX & Optimization</option>
+                  <option value="fintech">Fintech App</option>
+                  <option value="custom">Custom App</option>
+                  <option value="uiux">UI/UX Optimization</option>
                 </motion.select>
               </div>
 
-              <div className="space-y-2">
-                <label className="block text-sm font-medium text-slate-300">
+              {/* Message */}
+              <div>
+                <label className="text-sm text-slate-300">
                   Your Message
                 </label>
                 <motion.textarea
@@ -187,18 +205,19 @@ export const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell me about your project..."
-                  rows={5}
+                  rows={4}
                   required
-                  whileFocus={{ scale: 1.02 }}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-500 focus:outline-none transition-colors resize-none"
+                  whileFocus={{ scale: 1.01 }}
+                  className="w-full mt-1 px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 focus:border-cyan-500 focus:outline-none resize-none"
                 />
               </div>
 
+              {/* Button */}
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition ${
                   submitted
                     ? 'bg-green-500/20 text-green-300 border border-green-500/50'
                     : 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white hover:shadow-lg hover:shadow-cyan-500/30'
@@ -206,12 +225,10 @@ export const Contact: React.FC = () => {
                 disabled={submitted}
               >
                 {submitted ? (
-                  <>
-                    <span>✓ Message Sent!</span>
-                  </>
+                  '✓ Message Sent!'
                 ) : (
                   <>
-                    <Send size={20} />
+                    <Send size={18} />
                     Send Message
                   </>
                 )}

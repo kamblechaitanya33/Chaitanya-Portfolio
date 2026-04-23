@@ -8,59 +8,104 @@ import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
 const projects = [
   {
-    id: 1,
-    title: 'Call Logs Management',
-    description:
-      'Advanced call log tracking and analytics application with real-time notifications.',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=400&fit=crop',
-    tags: ['Android', 'Kotlin', 'Room DB'],
-    category: 'android',
+    "id": 1,
+    "title": "Vektor ERP Solution",
+    "description": "Built an enterprise-grade ERP application to manage core business operations including inventory, order processing, and real-time reporting. The system ensures seamless data flow between modules and enhances operational visibility for better decision-making.",
+    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
+    "tags": ["Android", "Backend API", "Realtime Sync", "Business Automation"],
+    "category": "android",
+    "github": "https://github.com/kamblechaitanya33/Vektor",
+    "features": [
+      "Comprehensive inventory management system",
+      "Order processing with real-time status tracking",
+      "Live data synchronization with backend APIs",
+      "Detailed reporting and analytics dashboard",
+      "Modular architecture for scalable business operations"
+    ],
+    "impact": "Streamlined business workflows by automating key processes, reduced manual errors, and improved operational efficiency with real-time insights."
   },
   {
-    id: 2,
-    title: 'Financial Locker',
-    description:
-      'Secure financial data management app with encryption and biometric authentication.',
-    image: 'https://images.unsplash.com/photo-1563986768609-92f5b1409336?w=500&h=400&fit=crop',
-    tags: ['Flutter', 'Dart', 'Firebase'],
-    category: 'fintech',
+    "id": 2,
+    "title": "Financial Locker",
+    "description": "Built a secure fintech application to store sensitive financial data using biometric authentication and encrypted storage, ensuring privacy and data protection.",
+    "image": "https://images.unsplash.com/photo-1563986768609-92f5b1409336?w=500&h=400&fit=crop",
+    "tags": ["Android", "Java", "Backend API", "Security"],
+    "category": "fintech",
+    "features": [
+      "Biometric authentication (Fingerprint/Face)",
+      "Secure encrypted data storage",
+      "Cloud backup integration with Firebase",
+      "User-friendly financial data management"
+    ],
+    "impact": "Ensured high-level security and privacy for managing sensitive financial information."
   },
   {
-    id: 3,
-    title: 'Location Tracking System',
-    description:
-      'Real-time GPS tracking with geofencing and route optimization capabilities.',
-    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=500&h=400&fit=crop',
-    tags: ['Android', 'Google Maps', 'Location Services'],
-    category: 'android',
+    "id": 3,
+    "title": "Call Logs Management System",
+    "description": "Built an Android application to track, store, and analyze call logs in real time. The system captures incoming, outgoing, and missed calls and provides structured insights.",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=400&fit=crop",
+    "tags": ["Android", "Java", "Room DB", "MVVM"],
+    "category": "android",
+    "features": [
+      "Real-time tracking of incoming, outgoing, and missed calls",
+      "Advanced search and filtering by contact, type, and date",
+      "Efficient local data storage using Room Database",
+      "Structured call history for analytics",
+      "Optimized performance with MVVM architecture"
+    ],
+    "impact": "Streamlined call log management and improved accessibility while reducing manual tracking efforts."
   },
   {
-    id: 4,
-    title: 'Question Paper Generator',
-    description:
-      'Educational tool for creating and managing question papers with AI assistance.',
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=400&fit=crop',
-    tags: ['Flutter', 'REST API', 'SQLite'],
-    category: 'flutter',
+    "id": 4,
+    "title": "QAce Question Paper Generator",
+    "description": "Developed a Flutter-based application to automate the creation and management of question papers with customizable formats and difficulty levels.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=400&fit=crop",
+    "tags": ["Android", "Kotlin", "REST API", "RoomDb"],
+    "category": "flutter",
+    "github": "https://github.com/kamblechaitanya33/QAce",
+    "features": [
+      "Dynamic question generation using API integration",
+      "Difficulty-based categorization (Easy, Medium, Hard)",
+      "Customizable paper formats and structure",
+      "Offline storage using SQLite",
+      "Simple and intuitive UI for educators"
+    ],
+    "impact": "Reduced manual effort in academic paper creation and improved efficiency for educators."
   },
   {
-    id: 5,
-    title: 'ERP Solution',
-    description:
-      'Enterprise resource planning system with inventory and order management.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop',
-    tags: ['Android', 'Backend Integration', 'Real-time Sync'],
-    category: 'android',
+    "id": 5,
+    "title": "Quick Bus Booking & Location Tracking System",
+    "description": "Developed a Flutter application that enables users to book bus tickets, track live locations, and receive real-time updates using GPS and geofencing.",
+    "image": "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=500&h=400&fit=crop",
+    "tags": ["Flutter", "Google Maps", "Location API", "Real-time Tracking"],
+    "category": "android",
+    "github": "https://github.com/kamblechaitanya33/quick_bus",
+    "features": [
+      "Bus ticket booking and management",
+      "Live GPS tracking using Google Maps",
+      "Geofencing alerts for arrivals and departures",
+      "Route history visualization",
+      "Real-time trip updates"
+    ],
+    "impact": "Improved travel convenience and operational efficiency through real-time tracking and booking integration."
   },
   {
-    id: 6,
-    title: 'Performance Optimizer',
-    description:
-      'Application profiling and optimization tool for mobile development.',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=400&fit=crop',
-    tags: ['Flutter', 'Performance', 'Analytics'],
-    category: 'flutter',
-  },
+    "id": 6,
+    "title": "Slay With Clawdia (Web Platform)",
+    "description": "Developed a responsive web platform focused on delivering a smooth and optimized user experience with modern UI design and fast performance.",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=400&fit=crop",
+    "tags": ["React.js", "Frontend", "Responsive Design", "Performance"],
+    "category": "web",
+    "github": "https://github.com/kamblechaitanya33/slay_with_clawdia",
+    "features": [
+      "Responsive and user-friendly interface",
+      "Optimized performance and fast loading",
+      "Efficient state and resource management",
+      "Modern UI/UX design principles",
+      "Cross-device compatibility"
+    ],
+    "impact": "Enhanced user engagement through improved performance and seamless user experience across devices."
+  }
 ]
 
 const filterOptions = [
@@ -79,50 +124,40 @@ export const Projects: React.FC = () => {
       : projects.filter((p) => p.category === activeFilter)
 
   return (
-    <section id="projects" className="py-20 md:py-32 px-4 md:px-8">
+    <section className="py-10 sm:py-14 md:py-16 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <ScrollReveal direction="up" className="mb-16">
+
+        {/* Heading */}
+        <ScrollReveal direction="up" className="mb-8 sm:mb-10">
           <div className="text-center">
-            <AnimatedHeading
-              className="text-4xl md:text-5xl font-bold mb-4"
-              gradient
-            >
+            <AnimatedHeading className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3" gradient>
               Featured Projects
             </AnimatedHeading>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Showcase of my recent work across Android, Flutter, and innovative
-              solutions
+
+            <p className="text-base sm:text-lg text-slate-400 max-w-xl mx-auto">
+              A selection of real-world applications built across Android & Flutter.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Filter Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
+        {/* Filters */}
+        <motion.div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10">
           {filterOptions.map((option) => (
-            <motion.button
+            <button
               key={option.value}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               onClick={() => setActiveFilter(option.value)}
-              className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 ${
-                activeFilter === option.value
-                  ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/30'
-                  : 'bg-slate-800 text-slate-300 border border-slate-700 hover:border-cyan-500/50'
-              }`}
+              className={`px-4 py-2 rounded-lg ${activeFilter === option.value
+                ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white'
+                : 'bg-slate-800 text-slate-300 border border-slate-700'
+                }`}
             >
               {option.label}
-            </motion.button>
+            </button>
           ))}
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
@@ -130,11 +165,14 @@ export const Projects: React.FC = () => {
               description={project.description}
               image={project.image}
               tags={project.tags}
+              features={project.features}
+              impact={project.impact}
               index={index}
-            />
-          ))}
+              github={project.github}
+            />))}
         </div>
       </div>
     </section>
   )
 }
+
