@@ -9,8 +9,8 @@ const highlights = [
   'Call Logs Management App',
   'Financial Locker App',
   'Location Tracking System',
-  'Question Paper Generator',
-  '5+ Years Experience',
+  'Question Paper Generator',    
+  '5+ Years Experience', 
   'Android & Flutter Expert',
 ]
 
@@ -23,7 +23,7 @@ export const About: React.FC = () => {
             className="text-4xl md:text-5xl font-bold mb-4"
             gradient
           >
-            About Me
+            About Me.
           </AnimatedHeading>
         </ScrollReveal>
 
