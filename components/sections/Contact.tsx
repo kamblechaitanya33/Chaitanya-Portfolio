@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 import { AnimatedHeading } from '@/components/common/AnimatedHeading'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
@@ -24,16 +25,37 @@ export const Contact: React.FC = () => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    setSubmitted(true)
+    try {
+      const result = await emailjs.send(
+        'service_mayw73o',
+        'template_mdue79i',
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        'AohK_VXMCpJazXNkI'
+      )
 
-    setTimeout(() => {
-      setFormData({ name: '', email: '', service: '', message: '' })
-      setSubmitted(false)
-    }, 2500)
+      if (result.status === 200) {
+        setSubmitted(true)
+
+        setFormData({
+          name: '',
+          email: '',
+          service: '',
+          message: '',
+        })
+
+        setTimeout(() => setSubmitted(false), 3000)
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      alert('Failed to send message')
+    }
   }
 
   return (
@@ -78,10 +100,10 @@ export const Contact: React.FC = () => {
                 <div>
                   <p className="text-sm text-slate-400">Email</p>
                   <a
-                    href="mailto:chaitanya@example.com"
+                    href="kamblechaitanya56@gmail.com"
                     className="text-slate-200 hover:text-cyan-400 transition"
                   >
-                    chaitanya@example.com
+                    kamblechaitanya56@gmail.com
                   </a>
                 </div>
               </div>
@@ -93,7 +115,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-400">Phone</p>
-                  <p className="text-slate-200">+91 9000000000</p>
+                  <p className="text-slate-200">+91 9326272706</p>
                 </div>
               </div>
 
@@ -108,30 +130,6 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Socials */}
-              <div className="pt-4">
-                <p className="text-sm text-slate-400 mb-3">
-                  Connect with me:
-                </p>
-
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    { name: 'GitHub', link: '#' },
-                    { name: 'LinkedIn', link: '#' },
-                    { name: 'Instagram', link: '#' },
-                  ].map((social) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.link}
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 rounded-lg bg-slate-800 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 border border-slate-700 hover:border-cyan-500/50 transition"
-                    >
-                      {social.name}
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
             </div>
           </ScrollReveal>
 
@@ -174,7 +172,7 @@ export const Contact: React.FC = () => {
               </div>
 
               {/* Service */}
-              <div>
+              {/* <div>
                 <label className="text-sm text-slate-300">
                   Service Needed
                 </label>
@@ -193,7 +191,7 @@ export const Contact: React.FC = () => {
                   <option value="custom">Custom App</option>
                   <option value="uiux">UI/UX Optimization</option>
                 </motion.select>
-              </div>
+              </div> */}
 
               {/* Message */}
               <div>
@@ -217,11 +215,10 @@ export const Contact: React.FC = () => {
                 type="submit"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition ${
-                  submitted
-                    ? 'bg-green-500/20 text-green-300 border border-green-500/50'
-                    : 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white hover:shadow-lg hover:shadow-cyan-500/30'
-                }`}
+                className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition ${submitted
+                  ? 'bg-green-500/20 text-green-300 border border-green-500/50'
+                  : 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white hover:shadow-lg hover:shadow-cyan-500/30'
+                  }`}
                 disabled={submitted}
               >
                 {submitted ? (

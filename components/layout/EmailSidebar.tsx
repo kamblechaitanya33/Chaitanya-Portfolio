@@ -16,14 +16,14 @@ export const EmailSidebar: React.FC = () => {
         className="writing-vertical-rl"
       >
         <a
-          href="mailto:Georgy@gmail.com"
+          href="mailto:kamblechaitanya56@gmail.com"
           className="text-sm text-slate-400 hover:text-cyan-400 transition-colors duration-300 font-medium tracking-wider hover:tracking-widest flex flex-col gap-1"
           style={{
             writingMode: 'vertical-rl',
             transform: 'rotate(180deg)',
           }}
         >
-          Georgy@gmail.com
+          kamblechaitanya56@gmail.com
         </a>
       </motion.div>
     </div>

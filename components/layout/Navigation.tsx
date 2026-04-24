@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
+  { label: 'Experience', href: '#services' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -47,9 +47,7 @@ export const Navigation: React.FC = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-6 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-shadow"
         >
-          Let&apos;s Talk
         </motion.button>
       </motion.nav>
 

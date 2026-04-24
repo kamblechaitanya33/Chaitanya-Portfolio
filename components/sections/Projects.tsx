@@ -28,9 +28,9 @@ const projects = [
     "id": 2,
     "title": "Financial Locker",
     "description": "Built a secure fintech application to store sensitive financial data using biometric authentication and encrypted storage, ensuring privacy and data protection.",
-    "image": "https://images.unsplash.com/photo-1563986768609-92f5b1409336?w=500&h=400&fit=crop",
+    "image": "https://images.unsplash.com/photo-1607862167094-622324dcf908?q=80&w=858&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "tags": ["Android", "Java", "Backend API", "Security"],
-    "category": "fintech",
+    "category": "android",
     "features": [
       "Biometric authentication (Fingerprint/Face)",
       "Secure encrypted data storage",
@@ -43,9 +43,10 @@ const projects = [
     "id": 3,
     "title": "Call Logs Management System",
     "description": "Built an Android application to track, store, and analyze call logs in real time. The system captures incoming, outgoing, and missed calls and provides structured insights.",
-    "image": "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=400&fit=crop",
+    "image": "https://images.unsplash.com/photo-1621255457330-7ef4e88ec27f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dp",
     "tags": ["Android", "Java", "Room DB", "MVVM"],
     "category": "android",
+    "github": "https://github.com/SG-Code01/CallLogsViewer",
     "features": [
       "Real-time tracking of incoming, outgoing, and missed calls",
       "Advanced search and filtering by contact, type, and date",
@@ -61,7 +62,7 @@ const projects = [
     "description": "Developed a Flutter-based application to automate the creation and management of question papers with customizable formats and difficulty levels.",
     "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=400&fit=crop",
     "tags": ["Android", "Kotlin", "REST API", "RoomDb"],
-    "category": "flutter",
+    "category": "android",
     "github": "https://github.com/kamblechaitanya33/QAce",
     "features": [
       "Dynamic question generation using API integration",
@@ -76,9 +77,9 @@ const projects = [
     "id": 5,
     "title": "Quick Bus Booking & Location Tracking System",
     "description": "Developed a Flutter application that enables users to book bus tickets, track live locations, and receive real-time updates using GPS and geofencing.",
-    "image": "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=500&h=400&fit=crop",
+    "image": "https://images.unsplash.com/photo-1713096849818-0ef8023980e2?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "tags": ["Flutter", "Google Maps", "Location API", "Real-time Tracking"],
-    "category": "android",
+    "category": "flutter",
     "github": "https://github.com/kamblechaitanya33/quick_bus",
     "features": [
       "Bus ticket booking and management",
@@ -93,9 +94,9 @@ const projects = [
     "id": 6,
     "title": "Slay With Clawdia (Web Platform)",
     "description": "Developed a responsive web platform focused on delivering a smooth and optimized user experience with modern UI design and fast performance.",
-    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=400&fit=crop",
+    "image": "https://plus.unsplash.com/premium_photo-1722945683602-fa3b05086316?q=80&w=837&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "tags": ["React.js", "Frontend", "Responsive Design", "Performance"],
-    "category": "web",
+    "category": "website",
     "github": "https://github.com/kamblechaitanya33/slay_with_clawdia",
     "features": [
       "Responsive and user-friendly interface",
@@ -112,7 +113,7 @@ const filterOptions = [
   { label: 'All', value: 'all' },
   { label: 'Android', value: 'android' },
   { label: 'Flutter', value: 'flutter' },
-  { label: 'Fintech', value: 'fintech' },
+  { label: 'Website', value: 'website' },
 ]
 
 export const Projects: React.FC = () => {
@@ -159,17 +160,23 @@ export const Projects: React.FC = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredProjects.map((project, index) => (
-            <ProjectCard
+            <div
               key={project.id}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              tags={project.tags}
-              features={project.features}
-              impact={project.impact}
-              index={index}
-              github={project.github}
-            />))}
+              onClick={() => project.github && window.open(project.github, '_blank')}
+              className="cursor-pointer"
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                tags={project.tags}
+                features={project.features}
+                impact={project.impact}
+                index={index}
+                github={project.github}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

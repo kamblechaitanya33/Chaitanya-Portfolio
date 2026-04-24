@@ -25,8 +25,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-slate-800 py-8 px-4 text-center text-sm text-slate-400">
         <p>
-          © 2024 Chaitanya Kamble. Crafted with care using Next.js & Framer
-          Motion.
+          © Copyright all right reserved 2026 Chaitanya Kamble
         </p>
       </footer>
     </main>
